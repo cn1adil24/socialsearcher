@@ -38,7 +38,7 @@ venv\Scripts\activate
 
 3. Run this command to install dependencies
 
-pip install -r requirements.txt
+pip install -r requirements.txt --no-cache-dir
 
 4. Run this command to install preprocessor module
 
