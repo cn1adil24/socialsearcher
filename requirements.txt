@@ -6,7 +6,6 @@ nltk
 gensim
 matplotlib
 seaborn
-tweet-preprocessor
 sklearn
 requests
 google-api-python-client
