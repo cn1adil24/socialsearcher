@@ -1,0 +1,38 @@
+.covidNav{
+
+    border-radius: 25px;
+
+}
+.my-custom-scrollbar {
+    position: relative;
+    height: 500px;
+    overflow: auto;
+}
+.my-custom-scrollbar::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+.my-custom-scrollbar::-webkit-scrollbar-track {
+background: #F8F9FA; 
+}
+
+/* Handle */
+.my-custom-scrollbar::-webkit-scrollbar-thumb {
+background: #888; 
+}
+
+/* Handle on hover */
+.my-custom-scrollbar::-webkit-scrollbar-thumb:hover {
+background: #555; 
+}
+.table-wrapper-scroll-y {
+    display: block;
+}
+.bread-text{
+
+    color: rgb(53, 178, 255) !important;
+}
+.bg-bread{
+    background: lightskyblue;
+}

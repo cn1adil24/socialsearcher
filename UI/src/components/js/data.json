@@ -1,0 +1,162 @@
+{
+    "2020-03-27": {
+      "infected": 1296,
+      "critical": 7,
+      "recovered": 23,
+      "deceased": 10,
+      "sourceUrl": "http://covid.gov.pk",
+      "lastUpdatedAtSource": "2020-03-27T18:05:00.000Z",
+      "lastUpdatedAtApify": "2020-03-27T19:55:07.813Z",
+      "readMe": "https://apify.com/cyberfly/covid-pk"
+    },
+    "2020-03-28": {
+      "infected": 1495,
+      "critical": 7,
+      "recovered": 25,
+      "deceased": 12,
+      "sourceUrl": "http://covid.gov.pk",
+      "lastUpdatedAtSource": "2020-03-28T17:11:00.000Z",
+      "lastUpdatedAtApify": "2020-03-28T17:15:05.843Z",
+      "readMe": "https://apify.com/cyberfly/covid-pk"
+    },
+    "2020-03-29": {
+      "infected": 1571,
+      "critical": 11,
+      "recovered": 28,
+      "deceased": 14,
+      "sourceUrl": "http://covid.gov.pk",
+      "lastUpdatedAtSource": "2020-03-29T17:06:00.000Z",
+      "lastUpdatedAtApify": "2020-03-29T17:10:10.920Z",
+      "readMe": "https://apify.com/cyberfly/covid-pk"
+    },
+    "2020-03-30": {
+      "infected": 1717,
+      "critical": 11,
+      "recovered": 57,
+      "deceased": 20,
+      "sourceUrl": "http://covid.gov.pk",
+      "lastUpdatedAtSource": "2020-03-30T18:54:00.000Z",
+      "lastUpdatedAtApify": "2020-03-30T18:55:07.878Z",
+      "readMe": "https://apify.com/cyberfly/covid-pk"
+    },
+    "2020-03-31": {
+      "infected": 1938,
+      "critical": 12,
+      "recovered": 58,
+      "deceased": 26,
+      "sourceUrl": "http://covid.gov.pk",
+      "lastUpdatedAtSource": "2020-03-31T17:53:00.000Z",
+      "lastUpdatedAtApify": "2020-03-31T18:00:41.596Z",
+      "readMe": "https://apify.com/cyberfly/covid-pk"
+    },
+    "2020-04-01": {
+      "infected": 2071,
+      "critical": 10,
+      "recovered": 82,
+      "deceased": 26,
+      "sourceUrl": "http://covid.gov.pk",
+      "lastUpdatedAtSource": "2020-04-01T11:50:00.000Z",
+      "lastUpdatedAtApify": "2020-04-01T23:55:06.510Z",
+      "readMe": "https://apify.com/cyberfly/covid-pk"
+    },
+    "2020-04-02": {
+      "infected": 2386,
+      "critical": 9,
+      "recovered": 107,
+      "deceased": 34,
+      "sourceUrl": "http://covid.gov.pk",
+      "lastUpdatedAtSource": "2020-04-02T17:18:00.000Z",
+      "lastUpdatedAtApify": "2020-04-02T18:30:05.362Z",
+      "readMe": "https://apify.com/cyberfly/covid-pk"
+    },
+    "2020-04-03": {
+      "infected": 2547,
+      "critical": 10,
+      "recovered": 126,
+      "deceased": 37,
+      "sourceUrl": "http://covid.gov.pk",
+      "lastUpdatedAtSource": "2020-04-03T18:32:00.000Z",
+      "lastUpdatedAtApify": "2020-04-03T19:10:07.779Z",
+      "readMe": "https://apify.com/cyberfly/covid-pk"
+    },
+    "2020-04-04": {
+      "infected": 2818,
+      "critical": 13,
+      "recovered": 131,
+      "deceased": 41,
+      "sourceUrl": "http://covid.gov.pk",
+      "lastUpdatedAtSource": "2020-04-04T17:01:00.000Z",
+      "lastUpdatedAtApify": "2020-04-04T17:10:04.633Z",
+      "readMe": "https://apify.com/cyberfly/covid-pk"
+    },
+    "2020-04-05": {
+      "infected": 3059,
+      "critical": 18,
+      "recovered": 170,
+      "deceased": 45,
+      "sourceUrl": "http://covid.gov.pk",
+      "lastUpdatedAtSource": "2020-04-05T14:49:00.000Z",
+      "lastUpdatedAtApify": "2020-04-05T14:55:08.877Z",
+      "readMe": "https://apify.com/cyberfly/covid-pk"
+    },
+    "2020-04-06": {
+      "infected": 3505,
+      "critical": 17,
+      "recovered": 259,
+      "deceased": 51,
+      "sourceUrl": "http://covid.gov.pk",
+      "lastUpdatedAtSource": "2020-04-06T17:51:00.000Z",
+      "lastUpdatedAtApify": "2020-04-06T17:55:05.177Z",
+      "readMe": "https://apify.com/cyberfly/covid-pk"
+    },
+    "2020-04-07": {
+      "infected": 4005,
+      "critical": 28,
+      "recovered": 429,
+      "deceased": 54,
+      "sourceUrl": "http://covid.gov.pk",
+      "lastUpdatedAtSource": "2020-04-07T13:27:00.000Z",
+      "lastUpdatedAtApify": "2020-04-07T13:30:06.928Z",
+      "readMe": "https://apify.com/cyberfly/covid-pk"
+    },
+    "2020-04-08": {
+      "infected": 4187,
+      "critical": 25,
+      "recovered": 467,
+      "deceased": 58,
+      "sourceUrl": "http://covid.gov.pk",
+      "lastUpdatedAtSource": "2020-04-08T17:10:00.000Z",
+      "lastUpdatedAtApify": "2020-04-08T17:15:08.591Z",
+      "readMe": "https://apify.com/cyberfly/covid-pk"
+    },
+    "2020-04-09": {
+      "infected": 4489,
+      "critical": 31,
+      "recovered": 572,
+      "deceased": 63,
+      "sourceUrl": "http://covid.gov.pk",
+      "lastUpdatedAtSource": "2020-04-09T15:31:00.000Z",
+      "lastUpdatedAtApify": "2020-04-09T15:35:04.315Z",
+      "readMe": "https://apify.com/cyberfly/covid-pk"
+    },
+    "2020-04-10": {
+      "infected": 4695,
+      "critical": 45,
+      "recovered": 727,
+      "deceased": 66,
+      "sourceUrl": "http://covid.gov.pk",
+      "lastUpdatedAtSource": "2020-04-10T14:21:00.000Z",
+      "lastUpdatedAtApify": "2020-04-10T14:25:11.209Z",
+      "readMe": "https://apify.com/cyberfly/covid-pk"
+    },
+    "2020-04-11": {
+      "infected": 4892,
+      "critical": 50,
+      "recovered": 762,
+      "deceased": 77,
+      "sourceUrl": "http://covid.gov.pk",
+      "lastUpdatedAtSource": "2020-04-11T10:09:00.000Z",
+      "lastUpdatedAtApify": "2020-04-11T10:15:04.674Z",
+      "readMe": "https://apify.com/cyberfly/covid-pk"
+    }
+  }

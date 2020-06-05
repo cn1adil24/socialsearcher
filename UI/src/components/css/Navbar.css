@@ -1,0 +1,23 @@
+
+.link-font{
+
+    font-size: 120%;
+    color: white !important;
+}
+.link-font:hover{
+    color: #e75874 !important;
+}
+.brand-font{
+
+    font-size: 150%;
+    color:white !important;
+}
+.brand-font:hover{
+
+    color:#e75874 !important;
+}
+.navbar-brown{
+
+    background: linear-gradient(to right, #780206, #061161) !important;
+    z-index: 10;
+}
