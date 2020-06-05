@@ -62,6 +62,10 @@ neo4j-admin load --from=<location_of_graph.db.dump_file> --database=graph.db --f
 
 https://nodejs.org/en/download/current/
 
-2. Go to the 'UI' folder and run this command using the command prompt
+2. Go to the 'UI' folder and run this command using the command prompt to install node modules
+
+npm install
+
+3. Now, run this command to launch the project
 
 npm start
