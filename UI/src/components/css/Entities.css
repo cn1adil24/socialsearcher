@@ -1,0 +1,30 @@
+
+.entities{
+
+    border: 0 none;
+    background-color: rgb(243, 243, 243);
+    box-shadow: 1px 1px 3px gray;
+    border-radius: 15px;
+}
+.entity-item {
+
+    border: none;
+}
+.another-search-head{
+
+    text-transform: capitalize;
+    font-style: italic;
+    font-size: 16px;
+    margin-right: 4%;
+    margin-top: 11px;
+    padding: 0;
+}
+.entity-item-link{
+
+    margin: 0px 10px;
+    border-radius: 25px;
+    background: linear-gradient(to right, rgb(193, 144, 152), rgb(144, 27, 27));
+    color: white;
+    font-size: 15px;
+    padding: 10px 15px
+}

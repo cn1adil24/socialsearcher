@@ -1,0 +1,42 @@
+
+
+
+
+.form-control-borderless {
+    border: none;
+    /* padding: 15px 15px; */
+    /* padding: 0px; */
+    font-size: x-large;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+.card{
+    
+    border: none;
+}
+.card-body{
+
+    /* box-shadow: 0px 5px 15px lightblue; */
+    /* box-shadow: 0px 7px 12px #26305C; */
+    /* box-shadow: 0px 7px 12px #780206; */
+    box-shadow: 0px 7px 12px powderblue;
+    border-radius: 225px;
+    border: none;
+}
+
+.search-button{
+
+    border-radius: 225px;
+    padding: 12px 20px;
+    
+    /* background-color: powderblue; */
+    /* background-color: #D2D6DA; */
+    /* background: linear-gradient(to right, #780206, #061161); */
+    background: black;
+    color: white;
+    border: none;
+}

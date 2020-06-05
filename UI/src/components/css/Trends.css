@@ -1,0 +1,68 @@
+.sidemenu-list, .scroll-trend {
+    height: 400px;
+    width: 270px;
+    
+}
+.scroll-trend {
+
+    
+    margin-top: 20px;
+   
+
+}
+.sidemenu-list {
+
+    list-style-type: none;
+    max-height: 300px;
+    overflow-y: hidden;
+    box-shadow: 1px 1px 5px gray;
+    margin: 0;
+    padding: 0;
+}
+.sidemenu-list:hover{
+    overflow-y: scroll;
+}
+.trend-link{
+
+    color: blue !important;
+}
+.trend-link:hover{
+
+    color: darkblue !important;
+    text-decoration: underline;
+}
+.sidemenu-list::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+.sidemenu-list::-webkit-scrollbar-track {
+
+    background: #F1F0F0; 
+}
+
+/* Handle */
+.sidemenu-list::-webkit-scrollbar-thumb {
+    background: rgb(125, 124, 124);
+}
+
+/* Handle on hover */
+.sidemenu-list::-webkit-scrollbar-thumb:hover {
+    background: #383B3F;
+}
+
+.sidelist-item {
+
+    text-decoration: none;
+    padding: 10px 30px;
+    font-size: 20px;
+}
+.sidelist-item a{
+    color: black;
+}
+.trend-heading{
+
+    margin-bottom: 20px;
+    margin-left: 30px;
+    margin-top: 30px;
+}

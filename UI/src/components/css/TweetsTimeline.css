@@ -1,0 +1,331 @@
+.tweet-timeline-err{
+
+    text-align: center;
+    margin-top: 60px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.tweet-spinner{
+
+    width:150px;
+    height:150px;
+    margin-left: 43%;
+    margin-top: 40px;
+}
+
+@media screen and (min-width: 768px){
+
+    iframe{
+
+        height:200px;
+        width: 282px;
+        margin-left: 2px;
+    }
+    .video-card{
+        border: 1px solid gray;
+        border-radius: 7px;
+    }
+}
+@media screen and (min-width: 900px){
+
+    iframe{
+
+        height:250px;
+        width: 282px;
+        margin-left: 2px;
+        border-radius: 7px;
+    }
+    .video-card{
+        border: 1px solid gray;
+        border-radius: 7px;
+    }
+}
+@media screen and (min-width: 1024px){
+
+    iframe{
+
+        height:300px;
+        width: 382px;
+        margin-left: 2px;
+    }
+    .video-card{
+        border: 1px solid gray;
+        border-radius: 7px;
+    }
+}
+@media screen and (min-width: 1200px){
+
+    iframe{
+
+        height:300px;
+        width: 458px;
+        margin-left: 2px;
+    }
+    .video-card{
+        border: 1px solid gray;
+        border-radius: 7px;
+    }
+}
+
+.btn-expand{
+
+    float: right;
+    margin-bottom: 10px;
+}
+.btn-videos{
+
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background-color: #780206;
+    color: white;
+    
+}
+.btn-tweets{
+
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    background-color: #061161;
+    color: white;
+    
+}
+.summary-text{
+
+    font-size: 18px;
+
+}
+.sentiment{
+
+    margin-left: 48%;
+}
+.tweet-card {
+
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+.tweets-sentiment{
+
+    border-radius: 50%;
+    padding: 3%;
+    margin: 10px 20px;
+    width: 5%;
+    height: 10%;
+
+}
+
+.fa-twitter {
+
+    color: #1DA1F2;
+    margin-right: 4px;
+}
+.tweet-name{
+
+    font-weight: bold;
+    font-size: 20px;
+}
+.tweet-text {
+
+    font-size: 17px;
+}
+.tweet-date {
+
+    font-weight: bold;
+}
+.tweets-timeline {
+    padding: 50px 0;
+    position: relative;
+}
+.tweets-timeline-nodes {
+        padding-bottom: 25px;
+        position: relative;
+}
+.tweets-timeline-nodes:nth-child(even) {
+    flex-direction: row-reverse;
+}
+.tweets-timeline h3, .tweets-timeline p {
+    padding: 5px 15px;
+} 
+.tweets-timeline h3{
+    font-weight: lighter;
+}
+.tweets-timeline p, .tweets-timeline time {
+    color: black
+}
+.tweets-timeline::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    border-left: 2px dashed  #780206;
+    height: 100%;
+    z-index: 1;
+    transform: translateX(-50%);;
+}
+.tweets-timeline-content {
+    
+    position: relative;
+    /* box-shadow: 0px 3px 15px 0px rgba(10, 55, 90, 0.2); */
+    /* border: 1px solid gray; */
+}
+
+.tweets-timeline-nodes:nth-child(odd) .tweets-timeline-date {
+    text-align: left;
+}
+ 
+.tweets-timeline-nodes:nth-child(even) .tweets-timeline-date {
+    text-align: right;
+}
+.tweets-timeline-nodes:nth-child(odd) .tweets-timeline-content::after {
+    content: "";
+    position: absolute;
+    top: 5%;
+    left: 100%;
+    width: 0;
+    border-left: 10px solid gainsboro;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+.tweets-timeline-nodes:nth-child(even) .tweets-timeline-content::after {
+    content: "";
+    position: absolute;
+    top: 5%;
+    right: 100%;
+    width: 0;
+    border-right: 10px solid gainsboro;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+.tweets-timeline-image {
+    position: relative;
+}
+.tweets-timeline-image::before {
+    content: "";
+    width: 50px;
+    height: 50px;
+    border: 2px dashed #780206;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+    z-index: 1;
+    
+
+}
+.tweets-timeline-image img {
+    position: relative;
+    z-index: 100;
+    
+}
+/*small device style*/
+
+@media (max-width: 767px) {
+    .tweets-timeline-nodes:nth-child(odd) h3,
+    .tweets-timeline-nodes:nth-child(odd) p {
+    text-align: left
+}
+.tweets-timeline-nodes:nth-child(even) {
+    flex-direction: row;
+}
+    .tweets-timeline::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 4%;
+    width: 0;
+    border-left: 2px dashed #780206;
+    height: 100%;
+    z-index: 1;
+    transform: translateX(-50%);
+}
+.tweets-timeline h3 {
+    font-size: 1.7rem;
+}
+.tweets-timeline p {
+    font-size: 14px;
+}
+.tweets-timeline-image {
+    position: absolute;
+    left: 0%;
+    top: 60px;
+    
+    /*transform: translateX(-50%;);*/
+}
+.tweets-timeline-nodes:nth-child(odd) .tweets-timeline-content::after {
+    content: "";
+    position: absolute;
+    top: 5%;
+    left: auto;
+    right: 100%;
+    width: 0;
+    border-left: 0;
+    border-right: 10px solid gainsboro;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+.tweets-timeline-nodes:nth-child(even) .tweets-timeline-content::after {
+    content: "";
+    position: absolute;
+    top: 5%;
+    right: 100%;
+    width: 0;
+    border-right: 10px solid #fff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+.tweets-timeline-nodes:nth-child(even) .tweets-timeline-date {
+    text-align: left;
+}
+.tweets-timeline-image::before {
+    width: 50px;
+    height: 50px;
+}
+iframe{
+
+    height:300px;
+    width: 420px;
+    margin-left: 2px;
+}
+.video-card{
+    border: 1px solid gray;
+    border-radius: 7px;
+}
+}
+
+/*extra small device style */
+@media (max-width: 575px) {
+    .tweets-timeline::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 3%;
+    
+}
+.tweets-timeline-image {
+    position: absolute;
+    left: -5%;
+    
+    }
+.tweets-timeline-image::before {
+    width: 50px;
+    height: 50px;
+    
+}
+iframe{
+
+    height:200px;
+    width: 300px;
+    margin-left: 2px;
+}
+.video-card{
+    border: 1px solid gray;
+    border-radius: 7px;
+}
+}
+
+
