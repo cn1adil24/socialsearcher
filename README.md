@@ -36,9 +36,17 @@ cd socialsearcher
 
 venv\Scripts\activate
 
-3. Run this command
+3. Run this command to install dependencies
 
 pip install -r requirements.txt
+
+4. Run this command to install preprocessor module
+
+(if git is installed on system)
+pip install git+https://github.com/s/preprocessor.git
+
+(if git is not installed on system)
+pip install --upgrade https://github.com/s/preprocessor/tarball/master
 
 ### Importing database
 
