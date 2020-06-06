@@ -18,7 +18,8 @@ class TweetsTimeline extends React.Component {
 
     state = {
                 summary: null, 
-                tweets: [], 
+                tweets: [],
+                tempTweets: [],
                 videos: [], 
                 seen: 'tweets', 
                 entity:[],
@@ -38,7 +39,8 @@ class TweetsTimeline extends React.Component {
         this.setState( 
                 {
                     summary: this.props.location.state, 
-                    tweets: response.data, 
+                    tweets: response.data,
+                    tempTweets: response.data,
                     videos:response2.data, 
                     entity: response3.data,
                     spinner:false
@@ -103,8 +105,8 @@ class TweetsTimeline extends React.Component {
         return (
             
             this.state.tweets.map( (data, i) => {
-                
                 return (
+                    
                     <div className="row no-gutters justify-content-end justify-content-md-around align-items-start tweets-timeline-nodes" key={i}>
                         
                         <div key={i} className="col-10 col-md-5 order-3 order-md-1 tweets-timeline-content tweet-card pt-2">
@@ -151,46 +153,38 @@ class TweetsTimeline extends React.Component {
     }
     sortBy = (type) => {
         
+
         let sorted = []
         if(type === 'retweet'){
 
-            sorted = this.state.tweets.sort(function(a, b) {
+            sorted = this.state.tempTweets.sort(function(a, b) {
                 return b.Retweet_count - a.Retweet_count;
             });
         }
         else if(type === 'date'){
 
-            sorted = this.state.tweets.sort(function(a, b) {
+            sorted = this.state.tempTweets.sort(function(a, b) {
                 var dateA = new Date(a.Created_time), dateB = new Date(b.Created_time);
                 return dateB - dateA;
             });
         }
-        else if(type==='angry'){
-
-            sorted = this.state.tweets.sort(function(a, b) {
-                var SentimentA = a.Sentiment, SentimentB = b.Sentiment
-                if (SentimentA > SentimentB) return -1;
-                if (SentimentA < SentimentB) return 1;
-                return 0;
-            });
-        }
-        else if(type==='smile'){
-
-            sorted = this.state.tweets.sort(function(a, b) {
-                var SentimentA = a.Sentiment, SentimentB = b.Sentiment
-                if (SentimentA < SentimentB) return -1;
-                if (SentimentA > SentimentB) return 1;
-                return 0;
-            });
-        }
         else{
-            sorted = this.state.tweets.sort(function(a, b) {
-                var SentimentA = a.Sentiment, SentimentB = b.Sentiment
-                if (SentimentA > SentimentB) return 0;
-                if (SentimentA < SentimentB) return 1;
-                return -1;
-            });
+
+            
+            const filter = {
+                angry: '#ff0000',
+                smile: '#8caa0b',
+                neutral: '#b3b3b3',
+            }
+
+            this.state.tempTweets.forEach(tweet => {
+
+                if(tweet.Sentiment === filter[type]){
+                    sorted.push(tweet)
+                }
+            })
         }
+        
         this.setState({tweets: sorted})
         
     }

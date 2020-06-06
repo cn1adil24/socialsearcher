@@ -23,7 +23,7 @@ class Summary extends React.Component {
                         <div className="summary-date">
                             <i className="far fa-clock"></i> {summary.Date}
                             <br/>
-                            <i class="fab fa-twitter"></i>tweet count: 10
+                            <i class="fab fa-twitter"></i>tweet count: {summary.tweet_count}
                         </div>
                         <Link to={{pathname: `tweetstimeline/${summary.id}`, state:summary.Summary}} className="btn btn-primary btn-expand">Expand</Link>
                     </div>
