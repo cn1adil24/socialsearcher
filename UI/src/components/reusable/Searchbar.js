@@ -60,7 +60,7 @@ class Searchbar extends React.Component {
                         </form>
                     </div>
                 </div>
-                <div className="row text-center">                
+                <div className="row error-text">                
                     <div className="col">
                         
                         <small className="text-danger">{this.state.error}</small>

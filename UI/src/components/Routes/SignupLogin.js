@@ -158,8 +158,8 @@ const SignupLogin = () => {
                         type="text" 
                         name="name" 
                         placeholder="Name..." 
-                        onChange={handleChange} 
-                        required />
+                        onChange={handleChange}
+                     />
                 </div>
                 <small className="text-danger">{nameError}</small>
                 <div className="wrap-input mt-4">
@@ -170,9 +170,7 @@ const SignupLogin = () => {
                         type="email" 
                         name="email" 
                         placeholder="Email address..."
-                        onChange={handleChange} 
-                        required
-                        title='Please Enter valid email eg: abc@example.com' 
+                        onChange={handleChange}
                     />
                     
                 </div>
@@ -188,8 +186,8 @@ const SignupLogin = () => {
                         placeholder="********" 
                         onChange={handleChange}
                         pattern=".{8}"
-                        title="Password must contain atleast characters"
-                        required/>
+                        title="Password must contain atleast 8 characters"
+                    />
                     
                 </div>
                 <small className="text-danger">{passwordError}</small>
