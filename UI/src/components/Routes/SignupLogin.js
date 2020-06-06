@@ -76,7 +76,7 @@ const SignupLogin = () => {
                 <div className="wrap-input mt-5">
                     <label className="label-input">Email</label>
                     <br />
-                    <input className="input" type="email" name="email" placeholder="Email addess..." onChange={onChange} />
+                    <input className="input" type="email" name="email" title="Email is not in a correct format e.g: abc@example.com" placeholder="Email address..." onChange={onChange} />
                 </div>
                 <small className="text-danger">{emailError}</small>
     
@@ -158,8 +158,8 @@ const SignupLogin = () => {
                         type="text" 
                         name="name" 
                         placeholder="Name..." 
-                        onChange={handleChange} 
-                        required />
+                        onChange={handleChange}
+                     />
                 </div>
                 <small className="text-danger">{nameError}</small>
                 <div className="wrap-input mt-4">
@@ -169,9 +169,9 @@ const SignupLogin = () => {
                         className="input" 
                         type="email" 
                         name="email" 
-                        placeholder="Email addess..." 
-                        onChange={handleChange} 
-                        required />
+                        placeholder="Email address..."
+                        onChange={handleChange}
+                    />
                     
                 </div>
                 <small className="text-danger">{emailError}</small>
@@ -186,8 +186,8 @@ const SignupLogin = () => {
                         placeholder="********" 
                         onChange={handleChange}
                         pattern=".{8}"
-                        title="Password must contain atleast characters"
-                        required/>
+                        title="Password must contain atleast 8 characters"
+                    />
                     
                 </div>
                 <small className="text-danger">{passwordError}</small>
