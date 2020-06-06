@@ -21,3 +21,8 @@
     background: linear-gradient(to right, #780206, #061161) !important;
     z-index: 10;
 }
+.custom-logout{
+
+    border-radius: 25px;
+    margin-top: 2px;;
+}

@@ -58,7 +58,7 @@
     iframe{
 
         height:300px;
-        width: 458px;
+        width: 444px;
         margin-left: 2px;
     }
     .video-card{
@@ -329,3 +329,8 @@ iframe{
 }
 
 
+.sent-icon{
+
+    width: 30px;
+    height: 30px;
+}

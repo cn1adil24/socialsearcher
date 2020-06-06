@@ -1,12 +1,18 @@
 import React from 'react'
 
-import {  TwitterTweetEmbed  } from 'react-twitter-embed';
+import TweetEmbed from 'react-tweet-embed';
 
 import axios from '../api/api'
 import Navbar from './Navbar'
 import '../css/TweetsTimeline.css'
 import Entities from './Entities'
 import { Redirect } from 'react-router-dom'
+
+import Angry from '../images/angry-icon.png'
+import Smile from '../images/smile-icon.png'
+import Neutral from '../images/neutral-icon.png'
+
+
 
 class TweetsTimeline extends React.Component {
 
@@ -24,7 +30,6 @@ class TweetsTimeline extends React.Component {
         
         const {id} = this.props.match.params;
         
-        console.log('id', id)
         const response = await axios.get(`/tweet?id=${id}`)
         const response2 = await axios.get(`/video?id=${id}`)
         const response3 = await axios.get(`/entity?id=${id}`)
@@ -52,10 +57,10 @@ class TweetsTimeline extends React.Component {
                 return <div className="row no-gutters justify-content-end justify-content-md-around align-items-start  tweets-timeline-nodes" key={i}>
                     <div className="col-10 col-md-5 order-3 order-md-1 tweets-timeline-content video-card">
                     <div className="pt-1 m-0 d-flex">
-                        <i class="fab fa-youtube fa-2x mt-1 mx-2" style={{color: 'red'}}></i>
+                        <i className="fab fa-youtube fa-2x mt-1 mx-2" style={{color: 'red'}}></i>
                         <p className="p-0">{data.Title}</p>
                     </div>
-                    <iframe className="iframe-videos"className="mt-2" title={data.Title}
+                    <iframe className="iframe-videos mt-2" title={data.Title}
                         src={`https://www.youtube.com/embed/${code[1]}`}>
                     </iframe>
                         
@@ -83,8 +88,8 @@ class TweetsTimeline extends React.Component {
         
         return (
 
-            <TwitterTweetEmbed
-                tweetId={token[4]}
+            <TweetEmbed
+                id={token[4]}
             />
         )
         
@@ -98,20 +103,21 @@ class TweetsTimeline extends React.Component {
         return (
             
             this.state.tweets.map( (data, i) => {
+                
                 return (
                     <div className="row no-gutters justify-content-end justify-content-md-around align-items-start tweets-timeline-nodes" key={i}>
                         
                         <div key={i} className="col-10 col-md-5 order-3 order-md-1 tweets-timeline-content tweet-card pt-2">
                             
                             <span className="sentiment">
-                                { data.Sentiment==='#8caa0b' ?
-                                    <i style={{color: '#8caa0b'}}
-                                    className="fas fa-smile fa-2x"></i>:
-                                    (data.Sentiment==='#ff0000' ?
-                                        <i style={{color: '#ff0000'}} className="fas fa-angry fa-2x"></i> :
-                                        <i style={{color: '#b3b3b3'}} className="fas fa-meh fa-2x"></i>
+                                {
+                                    data.Sentiment === '#8caa0b' ? 
+                                    <img src={Smile} className="sent-icon" alt="Smile" />:
+                                    (
+                                        data.Sentiment === '#ff0000'?
+                                        <img src={Angry} className="sent-icon" alt="Angry" /> :
+                                        <img src={Neutral} className="sent-icon" alt="Neutral" />
                                     )
-
                                 }
                             </span>
                             {this.embeedTweets(data.URL)}
@@ -143,6 +149,51 @@ class TweetsTimeline extends React.Component {
 
         )
     }
+    sortBy = (type) => {
+        
+        let sorted = []
+        if(type === 'retweet'){
+
+            sorted = this.state.tweets.sort(function(a, b) {
+                return b.Retweet_count - a.Retweet_count;
+            });
+        }
+        else if(type === 'date'){
+
+            sorted = this.state.tweets.sort(function(a, b) {
+                var dateA = new Date(a.Created_time), dateB = new Date(b.Created_time);
+                return dateB - dateA;
+            });
+        }
+        else if(type==='angry'){
+
+            sorted = this.state.tweets.sort(function(a, b) {
+                var SentimentA = a.Sentiment, SentimentB = b.Sentiment
+                if (SentimentA > SentimentB) return -1;
+                if (SentimentA < SentimentB) return 1;
+                return 0;
+            });
+        }
+        else if(type==='smile'){
+
+            sorted = this.state.tweets.sort(function(a, b) {
+                var SentimentA = a.Sentiment, SentimentB = b.Sentiment
+                if (SentimentA < SentimentB) return -1;
+                if (SentimentA > SentimentB) return 1;
+                return 0;
+            });
+        }
+        else{
+            sorted = this.state.tweets.sort(function(a, b) {
+                var SentimentA = a.Sentiment, SentimentB = b.Sentiment
+                if (SentimentA > SentimentB) return 0;
+                if (SentimentA < SentimentB) return 1;
+                return -1;
+            });
+        }
+        this.setState({tweets: sorted})
+        
+    }
     render() {
         if(!localStorage.getItem("Token"))
             return <Redirect to="/" />
@@ -159,12 +210,29 @@ class TweetsTimeline extends React.Component {
                         <p className="summary-text">{this.state.summary}</p>
                     </div>
                     <Entities entities={this.state.entity} />
-                    <div className="text-center mb-5">
+                    <div className="text-center">
                         <button className="btn btn-tweets" onClick={() => this.setState({seen: 'tweets'}) }>Tweets</button>
                         <button className="btn btn-videos" onClick={() => this.setState({seen: 'videos'}) } >videos</button>
                     </div>
+                    {this.state.seen === 'tweets' ?
+                        <div className="form-group w-50 m-auto">
+                            <label htmlFor="sel1">Sort by</label>
+                            <select className="form-control"
+                                value={this.state.sortBy}
+                                onChange={(e) => this.sortBy(e.target.value)}
+                            >
+                                <option value="retweet">Retweet Count</option>
+                                <option value="date">Date</option>
+                                <option value="angry">Negative Sentiment</option>
+                                <option value="smile">Positive Sentiment</option>
+                                <option value="neutral">Neutral Sentiment</option>
+                            </select>
+                        </div>
+                        :
+                        <></>
+                    }
                     {/* test */}
-                    <div className="container">
+                    <div className="container mt-5">
                     {
 
                         this.state.spinner ? 

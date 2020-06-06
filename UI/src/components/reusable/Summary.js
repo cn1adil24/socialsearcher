@@ -20,7 +20,11 @@ class Summary extends React.Component {
                     </div>
                     <p className="summary-text">{summary.Summary}</p>
                     <div className="justify-content-between d-flex">
-                        <div className="summary-date"><i className="far fa-clock"></i> {summary.Date}</div>
+                        <div className="summary-date">
+                            <i className="far fa-clock"></i> {summary.Date}
+                            <br/>
+                            <i class="fab fa-twitter"></i>tweet count: 10
+                        </div>
                         <Link to={{pathname: `tweetstimeline/${summary.id}`, state:summary.Summary}} className="btn btn-primary btn-expand">Expand</Link>
                     </div>
                 </li>
