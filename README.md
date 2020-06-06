@@ -1,6 +1,6 @@
 # Optimized Social Story Searcher using Knowledge Graph
 
-API documentation:
+API documentation: https://documenter.getpostman.com/view/9579911/SztK254C?version=latest
 
 Interface video:
 
