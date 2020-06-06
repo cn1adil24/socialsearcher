@@ -76,7 +76,7 @@ const SignupLogin = () => {
                 <div className="wrap-input mt-5">
                     <label className="label-input">Email</label>
                     <br />
-                    <input className="input" type="email" name="email" placeholder="Email addess..." onChange={onChange} />
+                    <input className="input" type="email" name="email" title="Email is not in a correct format e.g: abc@example.com" placeholder="Email address..." onChange={onChange} />
                 </div>
                 <small className="text-danger">{emailError}</small>
     
@@ -169,9 +169,11 @@ const SignupLogin = () => {
                         className="input" 
                         type="email" 
                         name="email" 
-                        placeholder="Email addess..." 
+                        placeholder="Email address..."
                         onChange={handleChange} 
-                        required />
+                        required
+                        title='Please Enter valid email eg: abc@example.com' 
+                    />
                     
                 </div>
                 <small className="text-danger">{emailError}</small>
