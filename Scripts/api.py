@@ -40,17 +40,23 @@ spell.word_frequency.load_words(dictionary)
 
 
 # Twitter API credentials for extracting trends
-twitter = Twitter(auth = OAuth("YOUR_ACCESS_TOKEN",
+try:
+    twitter = Twitter(auth = OAuth("YOUR_ACCESS_TOKEN",
                                "YOUR_SECRET_ACCESS_TOKEN",
                                "YOUR_CONSUMER_KEY",
                                "YOUR_SECRET_CONSUMER_KEY"))
+except:
+    print("Error in Token authentication")
 
 
 '''
     Extracting trends after every 30 mins,
     based on location (set to pakistan)
 '''
-trends = twitter.trends.place(_id = 23424922)
+try:
+    trends = twitter.trends.place(_id = 23424922)
+except:
+    trends = []
 
 # Function to extract trends
 def extract_tweets():
@@ -335,10 +341,15 @@ def api_summary():
         for s in ss:
             s[0]['id'] = s[1]
             s[0]['type'] = s[2]
+
+            # Retrieving no. of tweets for each summary
+            query = "MATCH (s:Story)-[:HAS_TWEET]->(tweet) WHERE ID(s) = " + str(s[1]) + " RETURN COUNT(tweet)"
+            s[0]['tweet_count'] = graph.run(query).to_table()[0][0]
+
             result[0]['data'].append(s[0])
         
         # Sort result by date
-        result = sorted(result, key=lambda k: k['Date'], reverse=True)
+        result[0]['data'] = sorted(result[0]['data'], key=lambda k: k['Date'], reverse=True)
         
         return jsonify(result)
         
@@ -547,7 +558,7 @@ def api_edit():
 
 '''
     - Description:
-        GET endpoint for extracting trends
+        GET endpoint for extracting current trends
 
     - Parameters:
         none
@@ -564,11 +575,15 @@ def get_trends():
     count = 0
     
     # Extract top 10 trends from the Twitter API data
-    for trend in trends[0]['trends']:
-        if count == 10:
-            break
-        res.append( trend['name'] )
-        count += 1
+    try:
+        for trend in trends[0]['trends']:
+            if count == 10:
+                break
+            res.append( trend['name'] )
+            count += 1
+    except:
+        print("Error in parsing trends")
+        res = trends
     
     return jsonify(res)
 
