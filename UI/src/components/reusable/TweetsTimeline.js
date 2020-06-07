@@ -124,17 +124,6 @@ class TweetsTimeline extends React.Component {
                             </span>
                             {this.embeedTweets(data.URL)}
                             <span className="float-right mr-3 text-primary" style={{fontStyle: 'italic'}}>Retweet Count: {data.Retweet_count}</span>
-                            {/* {this.checkVisibility(i)} */}
-                            
-                            {/* <div className="d-flex justify-content-between">
-                                
-                                <h5 className="text-dark p-3 tweet-name"><i className="fab fa-twitter"></i> {data.User_name}</h5>
-                                <div className="tweets-sentiment" style={{background: `${data.Sentiment}`}}></div>
-                            </div>
-                            <p className="tweet-text">{data.Description}</p>
-                            <hr></hr>
-                            <small className="text-dark float-right pr-3 pb-3 tweet-date"><time>{data.Created_time}</time></small>
-                             */}
                             
                         </div>
 
