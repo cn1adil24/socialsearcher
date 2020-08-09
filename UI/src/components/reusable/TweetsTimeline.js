@@ -8,6 +8,7 @@ import '../css/TweetsTimeline.css'
 import Entities from './Entities'
 import { Redirect } from 'react-router-dom'
 
+import TweetsMetaData from './TweetsMetaData'
 import Angry from '../images/angry-icon.png'
 import Smile from '../images/smile-icon.png'
 import Neutral from '../images/neutral-icon.png'
@@ -19,6 +20,9 @@ class TweetsTimeline extends React.Component {
     state = {
                 summary: null, 
                 tweets: [],
+                positiveCount: 0,
+                negativeCount: 0,
+                userCount: 0,
                 tempTweets: [],
                 videos: [], 
                 seen: 'tweets', 
@@ -35,12 +39,16 @@ class TweetsTimeline extends React.Component {
         const response2 = await axios.get(`/video?id=${id}`)
         const response3 = await axios.get(`/entity?id=${id}`)
         
-       
+       console.log(response.data)
+
         this.setState( 
                 {
                     summary: this.props.location.state, 
-                    tweets: response.data,
-                    tempTweets: response.data,
+                    tweets: response.data[3].data,
+                    positiveCount: response.data[1].Positive_count,
+                    negativeCount: response.data[2].Negative_count,
+                    userCount: response.data[0].User_count,
+                    tempTweets: response.data[3].data,
                     videos:response2.data, 
                     entity: response3.data,
                     spinner:false
@@ -124,17 +132,6 @@ class TweetsTimeline extends React.Component {
                             </span>
                             {this.embeedTweets(data.URL)}
                             <span className="float-right mr-3 text-primary" style={{fontStyle: 'italic'}}>Retweet Count: {data.Retweet_count}</span>
-                            {/* {this.checkVisibility(i)} */}
-                            
-                            {/* <div className="d-flex justify-content-between">
-                                
-                                <h5 className="text-dark p-3 tweet-name"><i className="fab fa-twitter"></i> {data.User_name}</h5>
-                                <div className="tweets-sentiment" style={{background: `${data.Sentiment}`}}></div>
-                            </div>
-                            <p className="tweet-text">{data.Description}</p>
-                            <hr></hr>
-                            <small className="text-dark float-right pr-3 pb-3 tweet-date"><time>{data.Created_time}</time></small>
-                             */}
                             
                         </div>
 
@@ -204,6 +201,11 @@ class TweetsTimeline extends React.Component {
                         <p className="summary-text">{this.state.summary}</p>
                     </div>
                     <Entities entities={this.state.entity} />
+                    {
+                        this.state.seen === 'tweets' ?
+                        <TweetsMetaData userCount={this.state.userCount} negativeCount={this.state.negativeCount} positiveCount={this.state.positiveCount} />
+                        : <></>
+                    }
                     <div className="text-center">
                         <button className="btn btn-tweets" onClick={() => this.setState({seen: 'tweets'}) }>Tweets</button>
                         <button className="btn btn-videos" onClick={() => this.setState({seen: 'videos'}) } >videos</button>

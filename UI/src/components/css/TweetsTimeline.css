@@ -133,10 +133,12 @@
 .tweets-timeline {
     padding: 50px 0;
     position: relative;
+    margin-top: 100px;
 }
 .tweets-timeline-nodes {
         padding-bottom: 25px;
         position: relative;
+        margin-top: -100px;
 }
 .tweets-timeline-nodes:nth-child(even) {
     flex-direction: row-reverse;
@@ -179,7 +181,7 @@
 .tweets-timeline-nodes:nth-child(odd) .tweets-timeline-content::after {
     content: "";
     position: absolute;
-    top: 5%;
+    top: 2%;
     left: 100%;
     width: 0;
     border-left: 10px solid gainsboro;
@@ -189,7 +191,7 @@
 .tweets-timeline-nodes:nth-child(even) .tweets-timeline-content::after {
     content: "";
     position: absolute;
-    top: 5%;
+    top: 2%;
     right: 100%;
     width: 0;
     border-right: 10px solid gainsboro;
@@ -220,80 +222,87 @@
     z-index: 100;
     
 }
-/*small device style*/
+/*small device style ungli karni he*/
 
 @media (max-width: 767px) {
+    .tweets-timeline-nodes {
+        margin-top: 2px;
+    }
     .tweets-timeline-nodes:nth-child(odd) h3,
     .tweets-timeline-nodes:nth-child(odd) p {
-    text-align: left
-}
-.tweets-timeline-nodes:nth-child(even) {
-    flex-direction: row;
-}
+        text-align: left
+    }
+    .tweets-timeline-nodes:nth-child(even) {
+        flex-direction: row;
+    }
+    .tweets-timeline {
+        margin-top: 0px;
+        padding-top: 0px;
+    }
     .tweets-timeline::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 4%;
-    width: 0;
-    border-left: 2px dashed #780206;
-    height: 100%;
-    z-index: 1;
-    transform: translateX(-50%);
-}
-.tweets-timeline h3 {
-    font-size: 1.7rem;
-}
-.tweets-timeline p {
-    font-size: 14px;
-}
-.tweets-timeline-image {
-    position: absolute;
-    left: 0%;
-    top: 60px;
-    
-    /*transform: translateX(-50%;);*/
-}
-.tweets-timeline-nodes:nth-child(odd) .tweets-timeline-content::after {
-    content: "";
-    position: absolute;
-    top: 5%;
-    left: auto;
-    right: 100%;
-    width: 0;
-    border-left: 0;
-    border-right: 10px solid gainsboro;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-}
-.tweets-timeline-nodes:nth-child(even) .tweets-timeline-content::after {
-    content: "";
-    position: absolute;
-    top: 5%;
-    right: 100%;
-    width: 0;
-    border-right: 10px solid #fff;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-}
-.tweets-timeline-nodes:nth-child(even) .tweets-timeline-date {
-    text-align: left;
-}
-.tweets-timeline-image::before {
-    width: 50px;
-    height: 50px;
-}
-iframe{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 4%;
+        width: 0;
+        border-left: 2px dashed #780206;
+        height: 100%;
+        z-index: 1;
+        transform: translateX(-50%);
+    }
+    .tweets-timeline h3 {
+        font-size: 1.7rem;
+    }
+    .tweets-timeline p {
+        font-size: 14px;
+    }
+    .tweets-timeline-image {
+        position: absolute;
+        left: 0%;
+        top: 60px;
+        
+        /*transform: translateX(-50%;);*/
+    }
+    .tweets-timeline-nodes:nth-child(odd) .tweets-timeline-content::after {
+        content: "";
+        position: absolute;
+        top: 5%;
+        left: auto;
+        right: 100%;
+        width: 0;
+        border-left: 0;
+        border-right: 10px solid gainsboro;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+    }
+    .tweets-timeline-nodes:nth-child(even) .tweets-timeline-content::after {
+        content: "";
+        position: absolute;
+        top: 5%;
+        right: 100%;
+        width: 0;
+        border-right: 10px solid gainsboro;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+    }
+    .tweets-timeline-nodes:nth-child(even) .tweets-timeline-date {
+        text-align: left;
+    }
+    .tweets-timeline-image::before {
+        width: 50px;
+        height: 50px;
+    }
+    iframe{
 
-    height:300px;
-    width: 420px;
-    margin-left: 2px;
-}
-.video-card{
-    border: 1px solid gray;
-    border-radius: 7px;
-}
+        height:300px;
+        width: 420px;
+        margin-left: 2px;
+    }
+    .video-card{
+        border: 1px solid gray;
+        border-radius: 7px;
+    }
 }
 
 /*extra small device style */
